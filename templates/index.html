@@ -1,0 +1,15 @@
+<html>
+<head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<h2>Confirmed cases in {{region}}</h2>
+<div class="chart" id="bargraph">
+    
+    <script>
+        var graphs = {{plot | safe}};
+        Plotly.plot('bargraph',graphs,{});
+    </script>
+</div>
+</body>
+</html>
