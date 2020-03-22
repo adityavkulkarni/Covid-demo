@@ -1,3 +1,4 @@
+#COVID19 Dashboard
 A simple dashboard for showing stats about COVID19 pandemic in India.
 The dashboard shows following:
 1. Count of: Total Confirmed Cases,Active Cases,Deaths,Recovered Cases
