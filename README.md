@@ -8,17 +8,16 @@ The dashboard shows following:
 ![Image of Dashboard](https://github.com/adityavkulkarni/Covid-demo/blob/master/covid.png)
 
 Package Requirements:
--Flask
--Plotly
--Pandas
--Datetime
--Warning
--Json
--kaggle
+1.Flask
+2.Plotly
+3.Pandas
+4.Datetime
+5.Warning
+6.Json
+7.kaggle
 
 Steps to Run:
--Clone this repository
--Open Terminal
--Change to repositry directory
--Run covid_india.Py :python3 covid_india.Py
--goto http://127.0.0.1:5000/ from your browser
+1.Clone this repository
+2.Change to repositry directory
+3.Run covid_india.Py :python3 covid_india.Py
+4.goto http://127.0.0.1:5000/ from your browser
