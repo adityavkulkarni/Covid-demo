@@ -257,37 +257,42 @@
                 <div class="w3-container w3-teal w3-padding-16">
                     
                     <div class="w3-center">
-                    <h3>{{total_confirmed}}</h3>
+                        <h2>  Total Confirmed Cases</h2>
+                        <h2>{{total_confirmed}}</h2>
+                    
                     </div>
                     <div class="w3-clear"></div>
-                    <h3>  Total Confirmed Cases</h3>
+                    
                 </div>
                 </div>
                 <div class="w3-quarter">
                 <div class="w3-container w3-blue w3-padding-16">
                     <div class="w3-center">
-                    <h3>{{active_cases}}</h3>
+                        <h2>Active Cases</h2>
+                    <h2>{{active_cases}}</h2>
                     </div>
                     <div class="w3-clear"></div>
-                    <h3>Active Cases</h3>
+                    
                 </div>
                 </div>
                 <div class="w3-quarter">
                 <div class="w3-container w3-red w3-padding-16">
                     <div class="w3-center">
-                    <h3>{{deaths}}</h3>
+                        <h2>Deaths</h2>
+                    <h2>{{deaths}}</h2>
                     </div>
                     <div class="w3-clear"></div>
-                    <h3>Deaths</h3>
+                    
                 </div>
                 </div>
                 <div class="w3-quarter">
                 <div class="w3-container w3-orange w3-text-white w3-padding-16">
                     <div class="w3-center">
-                    <h3>{{cured_cases}}</h3>
+                        <h2>Recovered Cases</h2>
+                        <h2>{{cured_cases}}</h2>
                     </div>
                     <div class="w3-clear"></div>
-                    <h3>Recovered Cases</h3>
+                    
                 </div>
                 </div>
             </div>
@@ -298,7 +303,7 @@
             <!--GRAPHS-->
             <div class="w3-containerw3-padding-32">
 
-                <h5 class="w3-bottombar w3-border-deep-purple">Trends of Corona Cases in India</h5>
+                <h2 class="w3-bottombar w3-border-deep-purple">Trends of Corona Cases in India</h2>
                 <div class="chart" id="linegraph">
                     <script>
                         var graphs = {{plot2 | safe}};
@@ -308,7 +313,7 @@
 
                 <div class="w3-row">
                 <div class="w3-half">
-                    <h5 class="w3-bottombar w3-border-red">State wise Active Cases</h5>
+                    <h2 class="w3-bottombar w3-border-red">State wise Active Cases</h2>
                     <div class="chart" id="bargraph1">
                         <script>
                             var graphs = {{plot1 | safe}};
@@ -317,7 +322,7 @@
                     </div>
                 </div>
                 <div class="w3-half">
-                    <h5 class="w3-bottombar w3-border-green">Daily New Cases</h5>
+                    <h2 class="w3-bottombar w3-border-green">Daily New Cases</h2>
                     <div class="chart" id="bargraph">
                         <script>
                             var graphs = {{plot3 | safe}};
@@ -333,7 +338,7 @@
 
             <!--TABLE-->
             <div class="w3-container">
-                <h2>State Wise Distribution</h2>
+                <h2 class="w3-bottombar w3-border-black">State Wise Distribution</h2>
                 {{table}}
                 
     

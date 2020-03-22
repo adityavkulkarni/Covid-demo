@@ -68,7 +68,7 @@ fig1 = px.bar(df.sort_values('Active cases', ascending=False).sort_values('Activ
              
              text='Active cases', 
              orientation='h', 
-             height=490,width=650, range_x = [0, max(df['Active cases'])])
+             height=550,width=900, range_x = [0, max(df['Active cases'])])
 fig1.update_traces(marker_color='#f44336', opacity=0.8, textposition='inside')
 fig1.update_layout(plot_bgcolor='rgb(236, 236, 236)',paper_bgcolor='rgba(0,0,0,0)')
 #fig.show()
@@ -84,12 +84,12 @@ fig2.add_trace(go.Scatter(x=dbd_India['Date'], y=dbd_India['Active'],
                 mode='lines',name='Active'))
 fig2.add_trace(go.Scatter(x=dbd_India['Date'], y=dbd_India['Deaths'],
                 mode='lines',name='Deaths'))
-fig2.update_layout(plot_bgcolor='rgb(236, 236, 236)',paper_bgcolor='rgba(0,0,0,0)',height=700,width=1200)
+fig2.update_layout(plot_bgcolor='rgb(236, 236, 236)',paper_bgcolor='rgba(0,0,0,0)',height=900,width=1800)
 #fig2.show()
 trends = json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
 
 
-fig3= px.bar(dbd_India, x="Date", y="New Cases", barmode='group',  height=490,width=650)
+fig3= px.bar(dbd_India, x="Date", y="New Cases", barmode='group',  height=550,width=900)
 fig3.update_layout(plot_bgcolor='rgb(236, 236, 236)',paper_bgcolor='rgba(0,0,0,0)')
 fig3.update_traces(marker_color='#8bc34a', opacity=0.8)
 #fig.show()
