@@ -4,7 +4,7 @@ The dashboard shows following:
 1. Count of: Total Confirmed Cases,Active Cases,Deaths,Recovered Cases
 2. Trends of Corona Cases in India
 3. State wise Active Cases
-4.State Wise Distribution
+4. State Wise Distribution
 
 ![Image of Dashboard](https://github.com/adityavkulkarni/Covid-demo/blob/master/covid.png)
 
