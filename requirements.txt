@@ -4,7 +4,7 @@ matplotlib==2.2.5
 schedule==0.6.0
 plotly==4.5.4
 requests==2.18.4
-pandas==1.0.0
+pandas==0.24.2
 beautifulsoup4==4.8.2
 scikit_learn==0.22.2.post1
 freeze==1.0.10
