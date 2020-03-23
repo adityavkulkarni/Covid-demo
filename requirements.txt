@@ -3,7 +3,7 @@ numpy==1.13.3
 matplotlib==2.2.5
 schedule==0.6.0
 plotly==4.5.4
-requests==2.18.4
+requests==2.20.0
 pandas==0.24.2
 beautifulsoup4==4.8.2
 scikit_learn==0.20.4
