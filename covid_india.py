@@ -1,23 +1,14 @@
 #!/usr/bin/env python
-import numpy as np 
 import pandas as pd 
-import os
-# Visualisation libraries
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pycountry
 import plotly.express as px
 from plotly.offline import init_notebook_mode, iplot 
 import plotly.graph_objs as go
 import plotly.offline as py
 from plotly.offline import download_plotlyjs,init_notebook_mode,plot,iplot
-from pywaffle import Waffle
 import json
 import plotly
 import plotly.express as px
-import folium
-from folium import plugins
-from data import get_data_from_kaggle,highlight_max,create_table
+from utils import highlight_max,create_table,update_data
 import warnings
 from flask import Flask,render_template,Markup
 from datetime import date
@@ -27,23 +18,17 @@ today = date.today()
 # dd/mm/YY
 d1 = today.strftime("%d/%m/%Y")
 
-plt.style.use("fivethirtyeight")
-plt.rcParams['figure.figsize'] = 10, 8
-plt.rcParams['image.cmap'] = 'viridis'
 warnings.filterwarnings('ignore')
-sns.set()
 
-get_data_from_kaggle()
-df= pd.read_csv('data/Covid cases in India.csv')
+new_cases = update_data()
+df= pd.read_csv('data/covidin.csv')
 df_india = df.copy()
 
-India_coord = pd.read_csv('data/indian_coord.csv')
+#India_coord = pd.read_csv('data/indian_coord.csv')
 
-dbd_India = pd.read_excel('data/per_day_cases.xlsx',sheet_name='India')
-dbd_Italy = pd.read_excel('data/per_day_cases.xlsx',sheet_name="Italy")
-dbd_Korea = pd.read_excel('data/per_day_cases.xlsx',sheet_name="Korea")
+dbd_India = pd.read_csv('data/perday.csv')
 
-df.drop(['S. No.'],axis=1,inplace=True)
+#df.drop(['S. No.'],axis=1,inplace=True)
 df['Total cases'] = df['Total Confirmed cases (Indian National)'] + df['Total Confirmed cases ( Foreign National )'] 
 df['Active cases'] = df['Total cases'] - (df['Cured/Discharged/Migrated'] + df['Deaths'])
 
@@ -106,8 +91,9 @@ app = Flask(__name__)
 def index():
 
     #return render_template('index.html', plot1=total_active_cases,plot2 = trends, plot3 = new_cases_per_day)
-    return render_template('dash.html',date = d1,active_cases = active_cases, total_confirmed = confirmed_cases, cured_cases = cured_cases, deaths = death_d ,table = Markup(create_table(total_state_wise)),plot1=total_active_cases,plot2 = trends, plot3 = new_cases_per_day)
+    return render_template('dash.html',date = d1,active_cases = active_cases, total_confirmed = confirmed_cases, cured_cases = cured_cases, deaths = death_d ,table = Markup(create_table(total_state_wise)),plot1=total_active_cases,plot2 = trends, plot3 = new_cases_per_day,new_cases=new_cases)
 
 
 
 app.run()
+
