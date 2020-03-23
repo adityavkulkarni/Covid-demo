@@ -8,15 +8,12 @@ from plotly.offline import download_plotlyjs,init_notebook_mode,plot,iplot
 import json
 import plotly
 import plotly.express as px
-from utils import highlight_max,create_table,update_data
+from utils import highlight_max,create_table,update_data,yesterday
 import warnings
 from flask import Flask,render_template,Markup
 from datetime import date
 
-today = date.today()
-
-# dd/mm/YY
-d1 = today.strftime("%d/%m/%Y")
+d1 = yesterday()
 
 warnings.filterwarnings('ignore')
 
